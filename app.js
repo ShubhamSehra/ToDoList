@@ -9,7 +9,7 @@ app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
-let items = [];
+let items = ["Resume", "Food"];
 
 app.get("/", function(req, res){
   let today = new Date();
@@ -20,7 +20,7 @@ app.get("/", function(req, res){
   };
   let day = today.toLocaleDateString("en-US", options);
 
-  res.render("list", {dayAndTime:day, itemsName: items});
+  res.render("list", {dayAndTime:day, nextItem: items});
 });
 
 app.post("/",function(req, res){

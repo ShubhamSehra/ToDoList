@@ -27,8 +27,16 @@
 
         <div class=" itemName position-absolute top-0 start-50 translate-middle-x">
 
-          <input type="checkbox" class="form-check-input" id="itemsCheck" name="cb">
-          <label class="form-check-label " for="itemsCheck"> &nbsp <%= itemsName %> </label>
+
+          <%  for (var i = 0; i < nextItem.length; i++) { %>
+              <input type="checkbox" class="form-check-input" id="itemsCheck" name="cb">
+
+              <label class="form-check-label " for="itemsCheck"> &nbsp <%= nextItem[i] %> </label>
+              <br />
+
+          <%  } %>
+
+
 
           <form class="" action="/" method="post">
             <input class="form-control-lg" type="input" name="item" value="">
