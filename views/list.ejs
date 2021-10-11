@@ -29,10 +29,13 @@
 
 
           <%  for (var i = 0; i < nextItem.length; i++) { %>
-              <input type="checkbox" class="form-check-input" id="itemsCheck" name="cb">
+            <div class="ms-5 sider">
 
-              <label class="form-check-label " for="itemsCheck"> &nbsp <%= nextItem[i] %> </label>
+              <input type="checkbox" class="form-check-input" id="itemsCheck">
+
+              <label class="form-check-label " for="itemsCheck"> <%= nextItem[i] %> </label>
               <br />
+            </div>
 
           <%  } %>
 

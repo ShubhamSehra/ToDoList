@@ -1,3 +1,14 @@
 .itemName{
   font-size: 2.3rem;
+
+}
+
+.sider{
+  border-bottom-style: solid;
+}
+
+input:checked+label {
+  text-decoration: line-through;
+  text-decoration-color: #A683E3;
+  color: powderblue;
 }
