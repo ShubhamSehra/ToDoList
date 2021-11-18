@@ -1,23 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>ToDoList</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body class="bg-info">
-    <div class="container mt-4 text-center">
-      <h1 class="fs-1 badge bg-dark">What To Do</h1>
+<%- include("header")  -%>
 
     </div>
     <div class="container mt-2 text-center">
-      <h1 class="fs-1 badge bg-dark"> <%= dayAndTime %> </h1>
+      <h1 class="fs-1 badge bg-dark"> <%= listTitle %> </h1>
       <br>
       <br>
     </div>
@@ -27,31 +12,29 @@
 
         <div class=" itemName position-absolute top-0 start-50 translate-middle-x">
 
-
-          <%  for (var i = 0; i < nextItem.length; i++) { %>
+          <% nextItem.forEach((item, i) => { %>
             <div class="ms-5 sider">
 
               <input type="checkbox" class="form-check-input" id="itemsCheck">
 
-              <label class="form-check-label " for="itemsCheck"> <%= nextItem[i] %> </label>
+              <label class="form-check-label " for="itemsCheck"> <%= item.name %> </label>
               <br />
             </div>
+        <%  }); %>
 
-          <%  } %>
+
+
+    
 
 
 
           <form class="" action="/" method="post">
             <input class="form-control-lg" type="input" name="item" value="">
-            <button type="submit" class="btn btn-lg btn-outline-dark" name="button">+</button>
+            <button type="submit" class="btn btn-lg btn-outline-dark" name="btn" value= <%= listTitle %> >+</button>
           </form>
 
         </div>
 
     </div>
 
-
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
-</html>
+  <%- include("footer")  -%>
