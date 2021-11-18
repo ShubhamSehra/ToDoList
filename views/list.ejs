@@ -13,18 +13,21 @@
         <div class=" itemName position-absolute top-0 start-50 translate-middle-x">
 
           <% nextItem.forEach((item, i) => { %>
-            <div class="ms-5 sider">
+            <form action="/delete" method="post">
+              <div class="ms-5 sider">
 
-              <input type="checkbox" class="form-check-input" id="itemsCheck">
+                <input type="checkbox" class="form-check-input" id="itemsCheck" value="<%= item._id %>" name="checkbox" onChange="this.form.submit()">
 
-              <label class="form-check-label " for="itemsCheck"> <%= item.name %> </label>
-              <br />
-            </div>
+                <label class="form-check-label " for="itemsCheck"> <%= item.name %> </label>
+                <br />
+              </div>
+
+            </form>
         <%  }); %>
 
 
 
-    
+
 
 
 
